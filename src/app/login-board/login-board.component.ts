@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup,Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login-board',
@@ -6,11 +8,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./login-board.component.css']
 })
 export class LoginBoardComponent {
-  username=""
-  show=true
-  password=""
-  submit(){
+  
+  form!:FormGroup;
 
+  constructor(private formBuilder:FormBuilder, private tostr:ToastrService){
+    this.createForm();
+  }
+
+  private createForm():void{
+    this.form = this.formBuilder.group({
+      username:['',Validators.required],
+      password:['',Validators.required]
+    })
+  }
+
+  failed():void{
+    this.tostr.error('Am intampinat o eroare in timpul logarii, te rog revino mai tarziu');
   }
   
 }

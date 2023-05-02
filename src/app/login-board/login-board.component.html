@@ -1,12 +1,14 @@
 <div id="login-page">
     <div class="login-pannel">
         <p>Kahoot Questions Manager</p>
-        <form class="example-form">
+        <form class="example-form" [formGroup]="form">
             <div class="form-input-container">
-                <input type="text" class="login-input" placeholder="Username"/>
-                <input type="password" class="login-input" placeholder="Password" />
+                <input type="text" class="login-input" placeholder="Username" formControlName="username"/>
+                <p class="error-msg" *ngIf="form.get('username')?.touched && form.get('username')?.invalid">Username-ul nu poate sa fie gol!</p>
+                <input type="password" class="login-input" placeholder="Password" formControlName="password" />
+                <p class="error-msg" *ngIf="form.get('password')?.touched && form.get('password')?.invalid">Campul cu parola nu poate sa fie gol!</p>
             </div>
-           <button class="submit-btn">Login</button>   
+           <button class="submit-btn" (click)="failed()" [disabled]="form.invalid">Login</button>   
         </form>
     </div>
 </div>

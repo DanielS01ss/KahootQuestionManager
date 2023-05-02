@@ -7,9 +7,14 @@ import { AllTasksComponent } from './all-tasks/all-tasks.component';
 import { AddTaskComponent } from './add-task/add-task.component';
 import { LoginBoardComponent } from './login-board/login-board.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { AppRoutingModule } from './app-routing.module';
+import { NotFoundComponent } from './not-found/not-found.component';
+
 
 @NgModule({
   declarations: [
@@ -17,14 +22,19 @@ import {MatInputModule} from '@angular/material/input';
     SideNavComponent,
     AllTasksComponent,
     AddTaskComponent,
-    LoginBoardComponent
+    LoginBoardComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
     MatFormFieldModule,
     FormsModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
