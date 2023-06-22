@@ -1,0 +1,55 @@
+<div class="add-question-container">
+    <app-side-nav></app-side-nav>
+    <div class="add-questions-card-container" >
+    <form [formGroup]="form"> 
+          <p class="new-question-header">Editează Întrebarea</p>
+            <mat-form-field class="example-full-width">
+                <mat-label>Titlul întrebării</mat-label>
+                <input matInput placeholder="Întrebare" value="" formControlName="questionTitle" required name="questionTitle">
+            </mat-form-field>
+            <div class="answers-container">
+                <p class="new-question-header">Răspunsuri</p>
+                <div class="answer-container">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Răspuns 1</mat-label>
+                        <input matInput placeholder="Răspuns" value="" formControlName="answer1" required name="answer1">
+                    </mat-form-field>
+                    <div class="is-correct-checkbox">
+                        <mat-checkbox formControlName="isCheckedAnsw1"> Răspuns corect</mat-checkbox>
+                    </div> 
+                </div>
+                <div class="answer-container">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Răspuns 2</mat-label>
+                        <input matInput placeholder="Răspuns" value="" formControlName="answer2" required name="answer2">
+                    </mat-form-field>
+                    <div class="is-correct-checkbox">
+                        <mat-checkbox formControlName="isCheckedAnsw2"> Răspuns corect</mat-checkbox>
+                    </div> 
+                </div>
+                <div class="answer-container">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Răspuns 3</mat-label>
+                        <input matInput placeholder="Răspuns" value="" formControlName="answer3" required name="answer3">
+                    </mat-form-field>
+                    <div class="is-correct-checkbox">
+                        <mat-checkbox formControlName="isCheckedAnsw3"> Răspuns corect</mat-checkbox>
+                    </div> 
+                </div>
+                <div class="answer-container">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Răspuns 4</mat-label>
+                        <input matInput placeholder="Răspuns" value="" formControlName="answer4" required name="answer4">
+                    </mat-form-field>
+                    <div class="is-correct-checkbox">
+                        <mat-checkbox formControlName="isCheckedAnsw4"> Răspuns corect</mat-checkbox>
+                    </div> 
+                </div>
+            </div>
+        </form>
+        <div class="button-container">
+            <button class="submit-btn" [disabled]="form.invalid || !validateCheckBox()" (click)="handleEditQuestion()">Editează întrebarea!</button>
+            <button class="submit-btn cancel" (click)="handleCancel()">Renunță</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="add-question-container">
+    <app-side-nav></app-side-nav>
+    <div class="add-questions-card-container" >
+        <div class="loading-container" *ngIf="loading">
+            <div class="loading-spinner"></div>
+        </div>
+    <div *ngIf="!loading">
+        <form [formGroup]="form"> 
+            <p class="new-question-header">{{question.question.stringValue}}</p>
+              <div class="answers-container">
+                  <p class="new-question-header">Răspunsuri</p>
+                  <ul class="answers">
+                      <li class="answer-card" [class.correct-answer]="firstAnswerCorrect">1. {{question.answer1.stringValue}}</li>
+                      <li class="answer-card" [class.correct-answer]="secondAnswerCorrect">2. {{question.answer2.stringValue}}</li>
+                      <li class="answer-card" [class.correct-answer]="thirdAnswerCorrect">3. {{question.answer3.stringValue}}</li>
+                      <li class="answer-card" [class.correct-answer]="fourthAnswerCorrect">4. {{question.answer4.stringValue}}</li>
+                  </ul>
+              </div>
+          </form>
+          <div>  
+              <p class="new-question-header">Data postării: {{formattedDate}}</p>
+          </div>
+          <div class="button-container">
+              <button class="submit-btn cancel" (click)="back()">Înapoi</button>
+          </div>
+    </div>
+
+    </div>
+</div>

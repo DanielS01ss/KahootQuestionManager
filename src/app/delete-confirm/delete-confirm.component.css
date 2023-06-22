@@ -1,0 +1,59 @@
+.confirmation-card{
+
+    padding:40px;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+}
+
+.are-you-sure-text{
+    color: red;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.question{
+    font-size: 1.2rem;
+}
+
+.confirmation-card-button-container{
+    position: relative;
+    top:100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.confirmation-card-button{
+    padding:20px;
+    font-size: 1.4rem;
+    border:none;
+    color:#fff;
+    border-radius: 5px;
+}
+
+.confirmation-card-button:hover{
+    cursor: pointer;
+}
+
+
+.delete-btn{
+    background-color: red;
+}
+
+.back-btn{
+    background-color: green;
+}
+
+@media screen and (max-width:1350px){
+    
+    .are-you-sure-text{
+        font-size: 1.1rem;
+    }
+    
+    .confirmation-card-button{
+        padding:10px;
+        font-size: 1.1rem;
+    }
+}
+
