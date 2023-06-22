@@ -1,0 +1,11 @@
+<div class="question-card">
+    <p class="question-card-section1">{{ question.question.length > 30 ? (question.question| slice:0:30) + '...' : question.question}}</p>
+    <p class="question-card-section2 not-displayed">{{question.correctAnswers.length}}</p>
+    <p class="question-card-section3 not-displayed">{{question.questionDate}}</p>
+    
+    <div class="question-card-tools">
+        <button class="question-card-button red-button" (click)="toggleAreYouSure()"><fa-icon [icon]="faTrash" class="icon-container"></fa-icon></button>
+        <button class="question-card-button green-button" (click)="toggleEditMenu()"><fa-icon [icon]="faPen" class="icon-container"></fa-icon></button>
+        <button class="question-card-button blue-button" (click)="seeQuestion()"><fa-icon [icon]="faArrowUpRightFromSquare" class="icon-container"></fa-icon></button>
+    </div>
+</div> 

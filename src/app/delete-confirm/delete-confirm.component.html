@@ -1,0 +1,14 @@
+<div class="confirmation-card">
+    <div>
+        <p class="are-you-sure-text" *ngIf="data.dialogMode === 1">Ești sigur că vrei să ștergi întrebarea aceasta?</p>
+        <p class="are-you-sure-text" *ngIf="data.dialogMode === 2">Ești sigur că vrei să ștergi întrebăriile acestea?</p>
+        <div *ngIf="data.dialogMode === 1">
+            <p class="question"> {{data.questionData.question}} </p>
+        </div>
+    </div>
+
+    <div class="confirmation-card-button-container">
+            <button class="confirmation-card-button delete-btn" (click)="handleDelete()"> {{ data.dialogMode === 1 ? 'Șterge-o' : 'Șterge-le' }} </button>
+            <button class="confirmation-card-button back-btn" (click)="closeDialog()">Înapoi</button>
+    </div>
+</div>  

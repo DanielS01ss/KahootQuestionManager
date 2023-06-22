@@ -1,1 +1,14 @@
-<p>side-nav works!</p>
+<div class="hamburger-menu" [class.dissapear]="!closedMenu" (click)="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+<div class="side-nav-container" [class.dissapear]="closedMenu">
+    <img src="../../assets/bph-logo.jpg" class="side-nav-img">
+    <button class="close-button" (click)="toggleMenu()"></button>
+    <ul class="side-menu-items-container">
+        <li class="side-menu-item" (click)="addQuestionNavigate()"><fa-icon [icon]="faPlus" class="icon-container"></fa-icon>Adaugă întrebare</li>
+        <li class="side-menu-item" (click)="seeQuestionsNavigate()"><fa-icon [icon]="faQuestion" class="icon-container"></fa-icon>Vezi întrebările</li>
+        <li class="side-menu-item" (click)="logout()"><fa-icon [icon]="faDoorOpen"  class="icon-container"></fa-icon>Logout</li>
+    </ul>
+</div>   

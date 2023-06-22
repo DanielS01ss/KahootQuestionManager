@@ -14,6 +14,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { QuestionCardComponent } from './question-card/question-card.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import { DeleteConfirmComponent } from './delete-confirm/delete-confirm.component';
+import {MatCheckboxModule} from '@angular/material/checkbox'
+import { HttpClientModule } from '@angular/common/http';
+import { EditCardComponent } from './edit-card/edit-card.component';
+import { SeeQuestionComponent } from './see-question/see-question.component';
 
 
 @NgModule({
@@ -23,7 +31,11 @@ import { NotFoundComponent } from './not-found/not-found.component';
     AllTasksComponent,
     AddTaskComponent,
     LoginBoardComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    QuestionCardComponent,
+    DeleteConfirmComponent,
+    EditCardComponent,
+    SeeQuestionComponent
   ],
   imports: [
     BrowserModule,
@@ -33,8 +45,12 @@ import { NotFoundComponent } from './not-found/not-found.component';
     MatInputModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    FontAwesomeModule,
     ToastrModule.forRoot(),
     AppRoutingModule,
+    MatDialogModule,
+    MatCheckboxModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

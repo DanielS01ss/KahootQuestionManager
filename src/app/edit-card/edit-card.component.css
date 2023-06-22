@@ -78,6 +78,16 @@
     cursor: pointer;
 }
 
+.cancel{
+    background-color: red;
+}
+
+.button-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
 @media screen and (max-width:1330px) {
     .add-questions-card-container{
         width: 95%;

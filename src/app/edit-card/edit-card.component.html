@@ -2,11 +2,11 @@
     <app-side-nav></app-side-nav>
     <div class="add-questions-card-container" >
     <form [formGroup]="form"> 
-          <p class="new-question-header">Întrebare nouă</p>
+          <p class="new-question-header">Editează Întrebarea</p>
             <mat-form-field class="example-full-width">
                 <mat-label>Titlul întrebării</mat-label>
                 <input matInput placeholder="Întrebare" value="" formControlName="questionTitle" required name="questionTitle">
-            </mat-form-field> 
+            </mat-form-field>
             <div class="answers-container">
                 <p class="new-question-header">Răspunsuri</p>
                 <div class="answer-container">
@@ -47,6 +47,9 @@
                 </div>
             </div>
         </form>
-        <button class="submit-btn" [disabled]="form.invalid || !validateCheckBox()" (click)="handleAddQuestion()">Postează întrebarea!</button>
+        <div class="button-container">
+            <button class="submit-btn" [disabled]="form.invalid || !validateCheckBox()" (click)="handleEditQuestion()">Editează întrebarea!</button>
+            <button class="submit-btn cancel" (click)="handleCancel()">Renunță</button>
+        </div>
     </div>
 </div>
