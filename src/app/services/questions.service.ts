@@ -72,4 +72,14 @@ export class QuestionsService {
     });
     return this.http.patch(`${API_ENDPOINTS.updateQuestion}`,questionToBeEdited,{headers:requestOptions});
   }
+
+  uploadFileWithQuestions(fileRequest:any):Observable<any>{
+    const access_token = localStorage.getItem('access_token');
+    const requestOptions =  new HttpHeaders({
+      'Authorization':`Bearer ${access_token}`
+    });
+    
+    return this.http.post(`${API_ENDPOINTS.uploadAfile}`,fileRequest,{headers:requestOptions});
+  }
+
 }

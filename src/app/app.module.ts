@@ -22,6 +22,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox'
 import { HttpClientModule } from '@angular/common/http';
 import { EditCardComponent } from './edit-card/edit-card.component';
 import { SeeQuestionComponent } from './see-question/see-question.component';
+import { UploadComponent } from './upload/upload.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { SeeQuestionComponent } from './see-question/see-question.component';
     QuestionCardComponent,
     DeleteConfirmComponent,
     EditCardComponent,
-    SeeQuestionComponent
+    SeeQuestionComponent,
+    UploadComponent
   ],
   imports: [
     BrowserModule,
