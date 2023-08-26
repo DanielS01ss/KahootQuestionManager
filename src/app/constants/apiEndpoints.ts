@@ -7,5 +7,6 @@ export const API_ENDPOINTS = {
     deleteQuestion:`${baseUrl}/questions/delete`,
     deleteAllQuestions:`${baseUrl}/questions/delete-all`,
     addQuestion:`${baseUrl}/questions/add-question`,
-    getAQuestion:`${baseUrl}/questions/get-question`
+    getAQuestion:`${baseUrl}/questions/get-question`,
+    uploadAfile:`${baseUrl}/questions/upload`
 }

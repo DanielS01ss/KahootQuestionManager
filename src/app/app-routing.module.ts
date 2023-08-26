@@ -8,6 +8,8 @@ import { AddTaskComponent } from './add-task/add-task.component';
 import { AuthGuard } from './guard/auth.guard';
 import { EditCardComponent } from './edit-card/edit-card.component';
 import { SeeQuestionComponent } from './see-question/see-question.component';
+import { UploadComponent } from './upload/upload.component';
+import { Auth } from 'firebase-admin/lib/auth/auth';
 
 const routes:Routes = [
   {path:'login', component:LoginBoardComponent},
@@ -15,6 +17,7 @@ const routes:Routes = [
   {path:'add-question', component:AddTaskComponent,canActivate:[AuthGuard]},
   {path:'edit', component:EditCardComponent,canActivate:[AuthGuard]},
   {path:'view', component:SeeQuestionComponent,canActivate:[AuthGuard]},
+  {path:'upload', component:UploadComponent,canActivate:[AuthGuard]},
   {path:'**', component:NotFoundComponent}
 ]
 

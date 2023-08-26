@@ -1,0 +1,21 @@
+<div class="add-question-container">
+    <app-side-nav></app-side-nav>
+    <div class="add-questions-card-container">
+        <h1>Uploadează întrebări </h1>
+        <p class="accepted-files">Fisiere acceptate: csv, json</p>
+        <input type="file" #fileInput style="display: none;" (change)="onFileSelected($event)" />
+        <button class="upload-btn" (click)="triggerFileInput()"><fa-icon [icon]="faCloudArrowUp" class="icon-container"></fa-icon></button>
+         <p class="wrong-extension-error" *ngIf="wrongExtensionError">Fișierul încărcat nu are o extensie acceptată!</p>
+         <p *ngIf="uploadedFileInfoShown" class="uploaded-file-info-container"><fa-icon [icon]="faCircleInfo" class="icon-container-info"></fa-icon>Fișierul încărcat: {{selectedFile?.name}}</p>
+         <div class="loading-circle-container" *ngIf="fileIsUploading"><div class="loading-circle"></div> Fișierul este procesat...</div>
+        <div>
+            <button class="file-format-info" (click)="toggleDisplayTemplate()"><fa-icon [icon]="faCircleQuestion" class="icon-container-question"></fa-icon>Ce format trebuie să aibe fișierele cu întrebări?</button>
+        </div>
+        <div *ngIf="displayTemplate">
+            Șabloane
+            <div class="file-template-item"><img src="../../assets/csv.svg" class="file-template-icon"/> CSV: <a href="https://drive.google.com/file/d/1rKWZgxDjWAWeql-_8HtHJKOTEtaHmBep/view?usp=sharing" target="_blank">Apasă aici</a> </div>
+            <div class="file-template-item"><img src="../../assets/json.svg" class="file-template-icon"/> JSON: <a href="https://drive.google.com/file/d/108bbvWjsImMxOuANsnCfx2EG-ZDhWNWt/view?usp=sharing" target="_blank">Apasă aici</a></div>
+            <div class="file-template-item"><img src="../../assets//exclamation-mark.svg" class="file-template-icon"/> Important: <a href="https://drive.google.com/file/d/1WWeJODF28HbK4rqUW3kCw4YT8dkyfwg0/view?usp=sharing" target="_blank">Apasă aici</a></div>
+        </div>
+    </div>
+</div> 

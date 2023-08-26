@@ -1,0 +1,125 @@
+.add-question-container{
+    background-image: url('../../assets/karthik-balakrishnan-NrS53eUKgiE-unsplash.jpg');
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.add-questions-card-container{
+    padding:10px;
+    padding-top:60px;
+    border-radius: 10px;
+    background-color: #fff;
+    width: 60%;
+    margin: auto;
+    margin-left: 25%;
+    text-align: center;
+    margin-top:80px;
+    -webkit-box-shadow: 10px 10px 5px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px -8px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px -8px rgba(0,0,0,0.75);
+}
+
+.accepted-files{
+    font-size:1.1rem;
+}
+
+.upload-btn{
+    padding:10px;
+    background-color:blue;
+    color:#fff;
+    border:0px;
+    margin:0px;
+    margin-top:30px;
+    width: 300px;
+    border-radius: 5px;
+}
+
+.upload-btn:hover{
+    cursor: pointer;
+    -webkit-box-shadow: 2px -1px 9px 3px rgba(56,142,255,1);
+-moz-box-shadow: 2px -1px 9px 3px rgba(56,142,255,1);
+box-shadow: 2px -1px 9px 3px rgba(56,142,255,1);
+}
+
+.icon-container{
+    font-size: 2.9rem;
+}
+
+.file-format-info{
+    margin-top:40px;
+    background-color: inherit;
+    border:0px;
+    padding:10px;
+    color:green;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.icon-container-question{
+    margin-right: 10px;
+}
+
+.file-format-info:hover{
+    cursor: pointer;
+    border: 3px solid rgb(2, 251, 2);
+    border-radius: 5px;
+}
+
+.file-template-icon{
+    width: 30px;
+}
+
+.file-template-item{
+    padding:10px;
+    font-size: 1.3rem;
+}
+
+.wrong-extension-error{
+    font-size: 1.5rem;
+    color:red;
+    margin-top:15px;
+}
+
+.icon-container-info{
+    padding:5px;
+    color:blue
+}
+
+.uploaded-file-info-container{
+    padding-top:20px;
+    font-size: 1.2rem;
+}
+
+
+
+
+.loading-circle {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #3498db;
+    border-top: 4px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: auto;
+    margin-top:20px;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+ 
+  
+  
+  
+  
+  
+  
