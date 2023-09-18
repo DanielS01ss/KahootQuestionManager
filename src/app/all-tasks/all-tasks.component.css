@@ -7,13 +7,13 @@
 
 .all-tasks-container{
     position: relative;
-    top:80px;
+    top:40px;
     font-size: 1.1rem;
     width: 90%; 
     margin: auto;
     border-radius: 10px;
     background-color: #fff;
-    min-height: 300px;
+    min-height: 600px;
     font-family: 'Lato', sans-serif;
     font-family: 'Quicksand', sans-serif;
     margin-left: 5%;
@@ -32,6 +32,7 @@
 .question-card{
     display: flex;
     flex-direction: row;
+    padding:5px;
 }
 
 .card-header{
@@ -47,9 +48,9 @@
     border-radius: 6px;
     padding:30px;
     -webkit-box-shadow: -1px -2px 13px 0px rgba(0,0,0,0.75);
--moz-box-shadow: -1px -2px 13px 0px rgba(0,0,0,0.75);
-box-shadow: -1px -2px 13px 0px rgba(0,0,0,0.75);
-    margin-top:80px;
+    -moz-box-shadow: -1px -2px 13px 0px rgba(0,0,0,0.75);
+    box-shadow: -1px -2px 13px 0px rgba(0,0,0,0.75);
+    margin-top:40px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -76,7 +77,7 @@ box-shadow: -1px -2px 13px 0px rgba(0,0,0,0.75);
 }
 
 .question-card-container{
-    height: 200px;
+    height: 350px;
     overflow-y: scroll;
 }
 
@@ -95,10 +96,62 @@ box-shadow: -1px -2px 13px 0px rgba(0,0,0,0.75);
     border-radius: 50%;
     animation: spin 1s linear infinite;
   }
+
+
+  .search-container .search-input{
+    background: transparent;
+    border: none;
+    outline:none;
+    width: 0px;
+    font-weight: 500;
+    font-size: 16px;
+    transition: 0.8s;
+
+    }
   
   @keyframes spin {
     to { transform: rotate(360deg); }
   }
+
+    .search-container{
+        margin: auto;
+        width: 0px;
+        background: #e7e7ff;
+        height: 30px;
+        border-radius: 30px;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: 0.8s;
+         box-shadow:  4px 4px 6px 0 rgba(255,255,255,.3),
+                -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+        inset -4px -4px 6px 0 rgba(255,255,255,.2),
+        inset 4px 4px 6px 0 rgba(0, 0, 0, .2);
+    }
+
+    .search-container:hover > .search-input{
+        width: 400px;
+    }
+
+   
+
+    .search-container .search-btn .fas{
+        color: #5cbdbb;
+    }
+
+    @keyframes hoverShake {
+    0% {transform: skew(0deg,0deg);}
+    25% {transform: skew(5deg, 5deg);}
+    75% {transform: skew(-5deg, -5deg);}
+    100% {transform: skew(0deg,0deg);}
+    }
+
+    .search-container:hover{
+    animation: hoverShake 0.15s linear 3;
+    width: 400px;
+    }
 
 @media screen and (max-width:1450px){
 

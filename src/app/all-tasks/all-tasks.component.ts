@@ -4,6 +4,7 @@ import { Question } from '../types/Question';
 import { ToastrService } from 'ngx-toastr';
 import { MatDialog } from '@angular/material/dialog';
 import { DeleteConfirmComponent } from '../delete-confirm/delete-confirm.component';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-all-tasks',
@@ -12,8 +13,10 @@ import { DeleteConfirmComponent } from '../delete-confirm/delete-confirm.compone
 })
 export class AllTasksComponent {
 
+  faMagnifyingGlass = faMagnifyingGlass;
   loading:boolean = true;
   allQuestions : Array<any> = [];
+  filteredQuestions:Array<any> = [];
   constructor(private dialog:MatDialog, private questionService:QuestionsService, private tostr:ToastrService){
     this.fetchAllQuestions();
   }
@@ -40,6 +43,7 @@ export class AllTasksComponent {
       
       return newObj;
       });
+      this.filteredQuestions = this.allQuestions;
       this.loading = false;  
     }) 
   }

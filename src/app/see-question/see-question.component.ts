@@ -51,62 +51,63 @@ export class SeeQuestionComponent {
       if(!id){
         this.router.navigate(['/not-found']);
       } else {
-        this.questionService.getAQuestion(id).subscribe(
-          {
-
-            next:data =>{
-              
-              this.question = {
-                answer1:data.answer1,
-                answer2:data.answer2,
-                answer3:data.answer3,
-                answer4:data.answer4,
-                correctAnswers:data.correctAnswers,
-                question:data.question
-              }
-              
-              this.dateObject = data.questionDate.timestampValue;
-              const seconds = parseInt(this.dateObject.seconds, 10);
-              const milliseconds = seconds * 1000 + Math.floor(this.dateObject.nanos / 1000000);
-              this.formattedDate = new Date(milliseconds).toLocaleString();
-
-              let isFirstChecked:boolean = false;
-              let isSecondChecked:boolean = false;
-              let isThirdChecked:boolean = false;
-              let isFourthChecked:boolean = false;
-              this.question.correctAnswers.arrayValue.values.forEach((element:any) => {
-                if(element.stringValue === '1'){
-                  isFirstChecked = true;
-                  this.firstAnswerCorrect = true;
-                } else if (element.stringValue === '2'){
-                  isSecondChecked = true;
-                  this.secondAnswerCorrect = true;
-                } else if (element.stringValue === '3'){
-                  isThirdChecked = true;
-                  this.thirdAnswerCorrect = true;
-                } else if (element.stringValue === '4'){
-                  isFourthChecked = true;
-                  this.fourthAnswerCorrect = true;
-                }
-              });
-
-              this.form.patchValue({
-                questionTitle:this.question.question.stringValue,
-                answer1:this.question.answer1.stringValue,
-                answer2:this.question.answer2.stringValue,
-                answer3:this.question.answer3.stringValue,
-                answer4:this.question.answer4.stringValue,
-                isCheckedAnsw1:isFirstChecked,
-                isCheckedAnsw2:isSecondChecked,
-                isCheckedAnsw3:isThirdChecked,
-                isCheckedAnsw4:isFourthChecked
-              });
-              this.loading = false;
-            },
-            error:error =>{
-              this.toastr.error("Am întâmpinat o problemă la preluarea întrebării"); 
         
+        this.questionService.getAQuestion(id).subscribe(
+          (data)=>{
+            this.question = {
+              answer1:data.answer1,
+              answer2:data.answer2,
+              answer3:data.answer3,
+              answer4:data.answer4,
+              correctAnswers:data.correctAnswers,
+              question:data.question
             }
+            
+            this.dateObject = data.questionDate.timestampValue;
+            const seconds = parseInt(this.dateObject.seconds, 10);
+            const milliseconds = seconds * 1000 + Math.floor(this.dateObject.nanos / 1000000);
+            this.formattedDate = new Date(milliseconds).toLocaleString();
+
+            let isFirstChecked:boolean = false;
+            let isSecondChecked:boolean = false;
+            let isThirdChecked:boolean = false;
+            let isFourthChecked:boolean = false;
+            this.question.correctAnswers.arrayValue.values.forEach((element:any) => {
+              console.log(element);
+              if(element.stringValue === "1"){
+                isFirstChecked = true;
+                this.firstAnswerCorrect = true;
+              } else if (element.stringValue === "2"){
+                isSecondChecked = true;
+                this.secondAnswerCorrect = true;
+              } else if (element.stringValue === "3"){
+                isThirdChecked = true;
+                this.thirdAnswerCorrect = true;
+              } else if (element.stringValue === "4"){
+                isFourthChecked = true;
+                this.fourthAnswerCorrect = true;
+              }
+
+              console.log(this.firstAnswerCorrect);
+              console.log(this.secondAnswerCorrect);
+              console.log(this.thirdAnswerCorrect);
+              console.log(this.fourthAnswerCorrect);
+            });
+
+            this.form.patchValue({
+              questionTitle:this.question.question.stringValue,
+              answer1:this.question.answer1.stringValue,
+              answer2:this.question.answer2.stringValue,
+              answer3:this.question.answer3.stringValue,
+              answer4:this.question.answer4.stringValue,
+              isCheckedAnsw1:isFirstChecked,
+              isCheckedAnsw2:isSecondChecked,
+              isCheckedAnsw3:isThirdChecked,
+              isCheckedAnsw4:isFourthChecked
+            });
+            this.loading = false;
+          },(error)=>{
+              console.log(error);
           }
         );
       }

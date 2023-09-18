@@ -103,8 +103,9 @@
 }
 
 .correct-answer{
-    background-color: rgb(198, 255, 198);
+    background-color: aquamarine;
 }
+
 
 @media screen and (max-width:1000px){
     .add-questions-card-container{

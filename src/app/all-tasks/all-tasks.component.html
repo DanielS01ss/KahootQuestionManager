@@ -1,15 +1,20 @@
-<div class="all-tasks">
+<div class="all-tasks"> 
     <app-side-nav></app-side-nav>
     <div class="all-tasks-container">
         <div class="card-header">
             <p>Întrebările adăugate</p> 
         </div>  
+        <div class="search-container">
+            <input type="text" name="search" placeholder="Search..." class="search-input">
+            <a href="#" class="search-btn">
+                <fa-icon [icon]="faMagnifyingGlass" class="icon-container"></fa-icon> 
+            </a>
+        </div>
         <div class="card-body">
             <div class="question-card">
                 <p>Titlul întrebării</p>
                 <p class="not-displayed">Nr răspunsuri corecte</p>
                 <p class="not-displayed">Data adăugării</p> 
-                
                 <div class="question-card-tools">
                     Opțiunii 
                 </div>
@@ -18,7 +23,7 @@
                 <div class="loading-spinner"></div>
               </div>
             <div class="question-card-container" *ngIf="!loading">
-                <app-question-card  *ngFor="let question of allQuestions" [refreshData]="fetchAllQuestions" [thisReference]="reference" [question]="question"></app-question-card>  
+                <app-question-card  *ngFor="let question of filteredQuestions" [refreshData]="fetchAllQuestions" [thisReference]="reference" [question]="question"></app-question-card>  
             </div>    
         </div> 
         <div class="btn-container">
