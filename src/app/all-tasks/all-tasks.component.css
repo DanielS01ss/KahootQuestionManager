@@ -9,14 +9,14 @@
     position: relative;
     top:40px;
     font-size: 1.1rem;
-    width: 90%; 
+    width: 85%; 
     margin: auto;
     border-radius: 10px;
     background-color: #fff;
     min-height: 600px;
     font-family: 'Lato', sans-serif;
     font-family: 'Quicksand', sans-serif;
-    margin-left: 5%;
+    margin-left: 10%;
     -webkit-box-shadow: 10px 10px 5px -8px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 10px 5px -8px rgba(0,0,0,0.75);
     box-shadow: 10px 10px 5px -8px rgba(0,0,0,0.75);
@@ -46,7 +46,7 @@
     width: 90%;
     margin: auto;
     border-radius: 6px;
-    padding:30px;
+    padding:20px;
     -webkit-box-shadow: -1px -2px 13px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: -1px -2px 13px 0px rgba(0,0,0,0.75);
     box-shadow: -1px -2px 13px 0px rgba(0,0,0,0.75);
