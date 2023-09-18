@@ -5,7 +5,7 @@
             <p>Întrebările adăugate</p> 
         </div>  
         <div class="search-container">
-            <input type="text" name="search" placeholder="Search..." class="search-input">
+            <input type="text" name="search" placeholder="Search..." class="search-input"   (input)="onSearch($event)" placeholder="Search...">
             <a href="#" class="search-btn">
                 <fa-icon [icon]="faMagnifyingGlass" class="icon-container"></fa-icon> 
             </a>

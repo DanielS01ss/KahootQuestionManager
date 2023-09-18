@@ -66,4 +66,11 @@ export class AllTasksComponent {
   handleDeleteAllQuestions(){
       this.openDialog();
   }
+
+  onSearch(event:any){
+    const searchText = event.target.value;
+    this.filteredQuestions = this.allQuestions.filter(question =>{
+      return question.question.toLowerCase().includes(searchText.toLowerCase());
+    });
+  }
 }
