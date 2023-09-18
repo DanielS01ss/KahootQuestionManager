@@ -19,7 +19,7 @@ export class UploadComponent {
   wrongExtensionError = false;
   uploadedFileInfoShown = false;
   fileIsUploading = false;
-
+  successMessage = false;
   faCircleInfo = faCircleInfo;
 
   selectedFile:File | null = null;
@@ -57,17 +57,22 @@ export class UploadComponent {
           this.wrongExtensionError = true;
           return;
       }
-      
     }
 
     if(this.selectedFile){
       const formData: FormData = new FormData();
       formData.append('file', this.selectedFile, this.selectedFile.name);
-
+      this.successMessage = false;
+      this.fileIsUploading = true;
       this.questionsService.uploadFileWithQuestions(formData).subscribe((resp)=>{
-        console.log(resp);
+        
+        if(resp.message == "File uploaded and processed successfully"){
+          this.successMessage = true;
+        }
+        this.fileIsUploading = false;
       },(err)=>{
         console.log(err);
+        this.fileIsUploading = false;
       });
     }
   }
